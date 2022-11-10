@@ -10,6 +10,7 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <link rel="stylesheet" href="style.css" />
 
@@ -19,11 +20,29 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Search a city...."
+                  class="form-control"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
           <div class="overview">
-            <h1>New York</h1>
+            <h1 id="city"></h1>
             <ul>
-              <li>Friday 05:00</li>
-              <li>Clear</li>
+              <li id="date"></li>
+              <li id="description"></li>
             </ul>
           </div>
           <div class="row">
@@ -32,19 +51,20 @@
                 <img
                   src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
                   alt="Sunny"
+                  id="icon"
                   class="float-left"
                 />
                 <div class="float-left">
-                  <strong>12</strong
+                  <strong id="temperature"></strong
                   ><span class="units">°C|<a href="#" class="">°F </a> </span>
                 </div>
               </div>
             </div>
             <div class="col">
               <ul>
-                <li>Precipitation :0%</li>
-                <li>Humidity :73%</li>
-                <li>Wind : 2 km/h</li>
+                <li>Precipitation :<span id="precipitation"></span>%</li>
+                <li>Humidity :<span id="humidity"></span>%</li>
+                <li>Wind : <span id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>
